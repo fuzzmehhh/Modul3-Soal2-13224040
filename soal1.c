@@ -43,8 +43,8 @@ int hasilMin(int x, int y, int z) {
 
         //mengambil nilai paling depan (FIFO)
         int gelas1 = q[depan][0];
-        int gelas2 = q[depan][0];
-        int langkah = q[depan][0];
+        int gelas2 = q[depan][1];
+        int langkah = q[depan][2];
         depan++;
 
         if (gelas1 == z || gelas2 == z){ //jika salah satu nilai gelas memenuhi, akan dikembalikan langkah minimum
