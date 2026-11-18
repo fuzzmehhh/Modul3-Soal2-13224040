@@ -8,15 +8,21 @@
 #include <stdlib.h>
 #define N 3
 
-hasilMin(int x, int y, int z) {
+int hasilMin(int x, int y, int z) {
     //dalam memastikan bahwa operasi memungkinkan, harus x < z < y atau y < z < x, maka
-    if (!(x < z && z < y) || !(y < z && z < x)) {
-        return -1;
+    if (x > y) {
+        if (z > x) {
+            return -1;
+        }
+    } else {
+        if (z > y) {
+            return -1;
+        }
     }
 
 
     //queue u/ BFS
-    int q[1000][3], depan = 0, belakang = 0;
+    int q[10000][3], depan = 0, belakang = 0;
 
     //kondisi ketika melalui kemungkinan yang sudah pernah
     bool pernah[x + 1][y + 1];
